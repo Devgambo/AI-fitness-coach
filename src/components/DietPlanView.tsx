@@ -36,7 +36,7 @@ export default function DietPlanView({ dietPlan }: DietPlanViewProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: index * 0.1 }}
-          className="bg-white/70 dark:bg-[#6b255d] backdrop-blur-sm rounded-3xl shadow-lg border border-gray-300/50 dark:border-[#333333] overflow-hidden"
+          className="bg-white/70 dark:bg-[#1E1E1E] backdrop-blur-sm rounded-3xl shadow-lg border border-gray-300/50 dark:border-[#333333] overflow-hidden"
         >
           <button
             onClick={() => toggleDay(index)}
