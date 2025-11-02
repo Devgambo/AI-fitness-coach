@@ -1,9 +1,10 @@
+// WorkoutPlanView.tsx (updated emojis)
 "use client";
 
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { WorkoutPlan } from "@/types";
-import { ChevronDown, ChevronUp, Image as ImageIcon } from "lucide-react";
+import { ChevronDown, ChevronUp, Image as ImageIcon, Dumbbell, Zap, Lightbulb } from "lucide-react";
 import ImageModal from "./ImageModal";
 
 interface WorkoutPlanViewProps {
@@ -35,23 +36,21 @@ export default function WorkoutPlanView({ workoutPlan }: WorkoutPlanViewProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: index * 0.1 }}
-          className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden"
+          className="bg-white/70 dark:bg-[#1E1E1E] backdrop-blur-sm rounded-3xl shadow-lg border border-gray-300/50 dark:border-[#333333] overflow-hidden"
         >
           <button
             onClick={() => toggleDay(index)}
-            className="w-full px-6 py-4 flex items-center justify-between hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-all duration-200"
+            className="w-full px-6 py-5 flex items-center justify-between hover:bg-gray-50/50 dark:hover:bg-[#222222] transition-all duration-200"
           >
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center flex-shrink-0">
-                <span className="text-lg font-bold text-white">
-                  🏋️
-                </span>
+              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center shadow-lg shadow-blue-400/25">
+                <Dumbbell className="w-6 h-6 text-white" />
               </div>
               <div className="text-left">
                 <h3 className="text-lg font-bold text-gray-900 dark:text-white">
                   {day.day}
                 </h3>
-                <p className="text-sm text-blue-600 dark:text-blue-400 font-medium">
+                <p className="text-sm text-blue-500 dark:text-blue-400 font-medium">
                   {day.focus}
                 </p>
               </div>
@@ -73,12 +72,12 @@ export default function WorkoutPlanView({ workoutPlan }: WorkoutPlanViewProps) {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: exIndex * 0.05 }}
-                  className="bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-700 dark:to-gray-750 p-4 rounded-xl border border-gray-200 dark:border-gray-600 hover:shadow-md transition-all duration-200"
+                  className="bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-700 dark:to-gray-750 p-5 rounded-2xl border border-gray-200 dark:border-gray-600 hover:shadow-md transition-all duration-200"
                 >
                   <div className="flex items-start justify-between gap-3">
                     <div className="flex items-start gap-3 flex-1">
-                      <div className="w-10 h-10 rounded-lg bg-blue-600 flex items-center justify-center flex-shrink-0 mt-1">
-                        <span className="text-white font-bold text-lg">⚡</span>
+                      <div className="w-10 h-10 rounded-lg bg-blue-500 flex items-center justify-center flex-shrink-0 mt-1">
+                        <Zap className="w-5 h-5 text-white" />
                       </div>
                       <div className="flex-1 min-w-0">
                         <h4 className="font-bold text-gray-900 dark:text-white mb-3 text-base">
@@ -100,14 +99,14 @@ export default function WorkoutPlanView({ workoutPlan }: WorkoutPlanViewProps) {
                         </div>
                         {exercise.notes && (
                           <p className="text-sm text-gray-600 dark:text-gray-400 mt-2 leading-relaxed">
-                            💡 {exercise.notes}
+                            <Lightbulb className="w-3 h-3 inline mr-1" /> {exercise.notes}
                           </p>
                         )}
                       </div>
                     </div>
                     <button
                       onClick={() => setSelectedExercise(exercise.name)}
-                      className="p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors flex-shrink-0 self-start"
+                      className="p-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-xl hover:from-blue-600 hover:to-purple-600 transition-all shadow-lg shadow-blue-500/25 border border-blue-500/20 flex-shrink-0 self-start"
                       title="View exercise image"
                     >
                       <ImageIcon className="w-4 h-4" />
@@ -119,29 +118,6 @@ export default function WorkoutPlanView({ workoutPlan }: WorkoutPlanViewProps) {
           )}
         </motion.div>
       ))}
-
-      {/* Tips Section */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5 }}
-        className="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-xl"
-      >
-        <h3 className="text-xl font-bold mb-4 text-blue-800 dark:text-blue-300">
-          💡 Workout Tips
-        </h3>
-        <ul className="space-y-2">
-          {workoutPlan.tips.map((tip, index) => (
-            <li
-              key={index}
-              className="flex items-start gap-2 text-gray-700 dark:text-gray-300"
-            >
-              <span className="text-blue-600 dark:text-blue-400 font-bold">•</span>
-              {tip}
-            </li>
-          ))}
-        </ul>
-      </motion.div>
 
       {/* Image Modal */}
       {selectedExercise && (

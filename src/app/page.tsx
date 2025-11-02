@@ -56,38 +56,28 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
-      <main className="container mx-auto px-4 py-8 max-w-7xl">
+    <div className="h-[90vh] bg-gradient-to-br from-pink-50/80 via-white/60 to-rose-50/80 dark:from-[#121212] dark:via-[#1A1A1A] dark:to-[#121212] backdrop-blur-sm">
+      <main className="h-full w-full fixed inset-0">
         {!plan ? (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
+            className="h-full w-full"
           >
-            <div className="text-center mb-12">
-              <h1 className="text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">
-                💪 AI Fitness Coach
-              </h1>
-              <p className="text-xl text-gray-600 dark:text-gray-300">
-                Get your personalized workout and diet plan powered by AI
-              </p>
-            </div>
-            
             <UserForm onSubmit={handleGeneratePlan} loading={loading} />
           </motion.div>
         ) : (
-          <PlanDisplay 
-            plan={plan} 
-            userDetails={userDetails!}
-            onRegenerate={handleRegenerate}
-            onStartOver={handleStartOver}
-          />
+          <div className="h-full w-full overflow-auto bg-white dark:bg-[#1A1A1A]">
+            <PlanDisplay 
+              plan={plan} 
+              userDetails={userDetails!}
+              onRegenerate={handleRegenerate}
+              onStartOver={handleStartOver}
+            />
+          </div>
         )}
       </main>
-
-      <footer className="text-center py-6 text-gray-600 dark:text-gray-400">
-        <p>© 2025 AI Fitness Coach. Powered by AI for your wellness journey.</p>
-      </footer>
     </div>
   );
 }
