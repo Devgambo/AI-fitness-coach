@@ -77,7 +77,7 @@ export default function UserForm({ onSubmit, loading }: UserFormProps) {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-white/80 dark:black backdrop-blur-sm border border-pink-300/50 dark:border-pink-700/50 rounded-2xl focus:ring-2 focus:ring-pink-500/50 focus:border-transparent dark:text-white placeholder-pink-400/50 transition-all duration-200"
+                  className="w-full px-4 py-3 bg-white/80 dark:bg-white/10 backdrop-blur-sm border border-pink-300/50 dark:border-pink-700/50 rounded-2xl focus:ring-2 focus:ring-pink-500/50 focus:border-transparent dark:text-white placeholder-pink-400/50 dark:placeholder-pink-500/50 transition-all duration-200"
                   placeholder="Enter your full name"
                 />
               </div>
@@ -95,7 +95,7 @@ export default function UserForm({ onSubmit, loading }: UserFormProps) {
                   required
                   min="15"
                   max="100"
-                  className="w-full px-4 py-3 bg-white/80 dark:black backdrop-blur-sm border border-pink-300/50 dark:border-pink-700/50 rounded-2xl focus:ring-2 focus:ring-pink-500/50 dark:text-white transition-all duration-200"
+                  className="w-full px-4 py-3 bg-white/80 dark:bg-white/10 backdrop-blur-sm border border-pink-300/50 dark:border-pink-700/50 rounded-2xl focus:ring-2 focus:ring-pink-500/50 dark:text-white transition-all duration-200"
                 />
               </div>
 
@@ -109,7 +109,7 @@ export default function UserForm({ onSubmit, loading }: UserFormProps) {
                   value={formData.gender}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-white/80 dark:black backdrop-blur-sm border border-pink-300/50 dark:border-pink-700/50 rounded-2xl focus:ring-2 focus:ring-pink-500/50 dark:text-white transition-all duration-200"
+                  className="w-full px-4 py-3 bg-white/80 dark:bg-white/10 backdrop-blur-sm border border-pink-300/50 dark:border-pink-700/50 rounded-2xl focus:ring-2 focus:ring-pink-500/50 dark:text-white transition-all duration-200"
                 >
                   <option value="male">Male</option>
                   <option value="female">Female</option>
@@ -130,7 +130,7 @@ export default function UserForm({ onSubmit, loading }: UserFormProps) {
                   required
                   min="100"
                   max="250"
-                  className="w-full px-4 py-3 bg-white/80 dark:black backdrop-blur-sm border border-pink-300/50 dark:border-pink-700/50 rounded-2xl focus:ring-2 focus:ring-pink-500/50 dark:text-white transition-all duration-200"
+                  className="w-full px-4 py-3 bg-white/80 dark:bg-white/10 backdrop-blur-sm border border-pink-300/50 dark:border-pink-700/50 rounded-2xl focus:ring-2 focus:ring-pink-500/50 dark:text-white transition-all duration-200"
                 />
               </div>
 
@@ -147,7 +147,7 @@ export default function UserForm({ onSubmit, loading }: UserFormProps) {
                   required
                   min="30"
                   max="300"
-                  className="w-full px-4 py-3 bg-white/80 dark:black backdrop-blur-sm border border-pink-300/50 dark:border-pink-700/50 rounded-2xl focus:ring-2 focus:ring-pink-500/50 dark:text-white transition-all duration-200"
+                  className="w-full px-4 py-3 bg-white/80 dark:bg-white/10 backdrop-blur-sm border border-pink-300/50 dark:border-pink-700/50 rounded-2xl focus:ring-2 focus:ring-pink-500/50 dark:text-white transition-all duration-200"
                 />
               </div>
 
@@ -161,7 +161,7 @@ export default function UserForm({ onSubmit, loading }: UserFormProps) {
                   value={formData.fitnessGoal}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-white/80 dark:black backdrop-blur-sm border border-pink-300/50 dark:border-pink-700/50 rounded-2xl focus:ring-2 focus:ring-pink-500/50 dark:text-white transition-all duration-200"
+                  className="w-full px-4 py-3 bg-white/80 dark:bg-white/10 backdrop-blur-sm border border-pink-300/50 dark:border-pink-700/50 rounded-2xl focus:ring-2 focus:ring-pink-500/50 dark:text-white transition-all duration-200"
                 >
                   <option value="weight_loss">Weight Loss</option>
                   <option value="muscle_gain">Muscle Gain</option>
@@ -181,7 +181,7 @@ export default function UserForm({ onSubmit, loading }: UserFormProps) {
                   value={formData.fitnessLevel}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-white/80 dark:black backdrop-blur-sm border border-pink-300/50 dark:border-pink-700/50 rounded-2xl focus:ring-2 focus:ring-pink-500/50 dark:text-white transition-all duration-200"
+                  className="w-full px-4 py-3 bg-white/80 dark:bg-white/10 backdrop-blur-sm border border-pink-300/50 dark:border-pink-700/50 rounded-2xl focus:ring-2 focus:ring-pink-500/50 dark:text-white transition-all duration-200"
                 >
                   <option value="beginner">Beginner</option>
                   <option value="intermediate">Intermediate</option>
@@ -199,7 +199,7 @@ export default function UserForm({ onSubmit, loading }: UserFormProps) {
                   value={formData.workoutLocation}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-white/80 dark:black backdrop-blur-sm border border-pink-300/50 dark:border-pink-700/50 rounded-2xl focus:ring-2 focus:ring-pink-500/50 dark:text-white transition-all duration-200"
+                  className="w-full px-4 py-3 bg-white/80 dark:bg-white/10 backdrop-blur-sm border border-pink-300/50 dark:border-pink-700/50 rounded-2xl focus:ring-2 focus:ring-pink-500/50 dark:text-white transition-all duration-200"
                 >
                   <option value="home">Home</option>
                   <option value="gym">Gym</option>
@@ -217,7 +217,7 @@ export default function UserForm({ onSubmit, loading }: UserFormProps) {
                   value={formData.dietaryPreference}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-white/80 dark:black backdrop-blur-sm border border-pink-300/50 dark:border-pink-700/50 rounded-2xl focus:ring-2 focus:ring-pink-500/50 dark:text-white transition-all duration-200"
+                  className="w-full px-4 py-3 bg-white/80 dark:bg-white/10 backdrop-blur-sm border border-pink-300/50 dark:border-pink-700/50 rounded-2xl focus:ring-2 focus:ring-pink-500/50 dark:text-white transition-all duration-200"
                 >
                   <option value="vegetarian">Vegetarian</option>
                   <option value="non_vegetarian">Non-Vegetarian</option>
@@ -236,7 +236,7 @@ export default function UserForm({ onSubmit, loading }: UserFormProps) {
                   name="stressLevel"
                   value={formData.stressLevel}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-white/80 dark:black backdrop-blur-sm border border-pink-300/50 dark:border-pink-700/50 rounded-2xl focus:ring-2 focus:ring-pink-500/50 dark:text-white transition-all duration-200"
+                  className="w-full px-4 py-3 bg-white/80 dark:bg-white/10 backdrop-blur-sm border border-pink-300/50 dark:border-pink-700/50 rounded-2xl focus:ring-2 focus:ring-pink-500/50 dark:text-white transition-all duration-200"
                 >
                   <option value="low">Low</option>
                   <option value="moderate">Moderate</option>
@@ -257,7 +257,7 @@ export default function UserForm({ onSubmit, loading }: UserFormProps) {
                   min="3"
                   max="12"
                   step="0.5"
-                  className="w-full px-4 py-3 bg-white/80 dark:black backdrop-blur-sm border border-pink-300/50 dark:border-pink-700/50 rounded-2xl focus:ring-2 focus:ring-pink-500/50 dark:text-white transition-all duration-200"
+                  className="w-full px-4 py-3 bg-white/80 dark:bg-white/10 backdrop-blur-sm border border-pink-300/50 dark:border-pink-700/50 rounded-2xl focus:ring-2 focus:ring-pink-500/50 dark:text-white transition-all duration-200"
                 />
               </div>
 
@@ -274,7 +274,7 @@ export default function UserForm({ onSubmit, loading }: UserFormProps) {
                   min="1"
                   max="10"
                   step="0.5"
-                  className="w-full px-4 py-3 bg-white/80 dark:black backdrop-blur-sm border border-pink-300/50 dark:border-pink-700/50 rounded-2xl focus:ring-2 focus:ring-pink-500/50 dark:text-white transition-all duration-200"
+                  className="w-full px-4 py-3 bg-white/80 dark:bg-white/10 backdrop-blur-sm border border-pink-300/50 dark:border-pink-700/50 rounded-2xl focus:ring-2 focus:ring-pink-500/50 dark:text-white transition-all duration-200"
                 />
               </div>
 
@@ -288,7 +288,7 @@ export default function UserForm({ onSubmit, loading }: UserFormProps) {
                   value={formData.medicalHistory}
                   onChange={handleChange}
                   rows={3}
-                  className="w-full px-4 py-3 bg-white/80 dark:black backdrop-blur-sm border border-pink-300/50 dark:border-pink-700/50 rounded-2xl focus:ring-2 focus:ring-pink-500/50 dark:text-white transition-all duration-200 resize-none"
+                  className="w-full px-4 py-3 bg-white/80 dark:bg-white/10 backdrop-blur-sm border border-pink-300/50 dark:border-pink-700/50 rounded-2xl focus:ring-2 focus:ring-pink-500/50 dark:text-white transition-all duration-200 resize-none"
                   placeholder="Any injuries, conditions, or medications..."
                 />
               </div>
@@ -320,7 +320,7 @@ export default function UserForm({ onSubmit, loading }: UserFormProps) {
 
       {/* Right Side - Image/Visual */}
       <motion.div 
-        className="flex-1 bg-gradient-to-br from-pink-400/20 via-rose-400/10 to-pink-500/20 dark:black backdrop-blur-sm relative overflow-hidden"
+        className="flex-1 bg-gradient-to-br from-pink-400/20 via-rose-400/10 to-pink-500/20 dark:from-pink-950/40 dark:via-rose-950/30 dark:to-pink-950/40 backdrop-blur-sm relative overflow-hidden"
         initial={{ opacity: 0, x: 20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}

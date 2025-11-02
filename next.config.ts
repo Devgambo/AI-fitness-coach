@@ -15,6 +15,10 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'replicate.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'cdn-magnific.freepik.com',
+      },
     ],
   },
 };

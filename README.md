@@ -24,7 +24,7 @@ An intelligent, AI-powered fitness and diet planning application that generates 
 
 - **Text-to-Speech**: Listen to your workout or diet plan using ElevenLabs API for hands-free convenience
 - **PDF Export**: Download your complete fitness and diet plan as a beautifully formatted PDF document
-- **AI Image Generation**: Generate visual representations of exercises and meals using Google Imagen 3.0
+- **AI Image Generation**: Generate visual representations of exercises and meals using Freepik Imagen 3 API
 - **Dark Mode Support**: Beautiful dark/light theme toggle with smooth transitions
 - **Local Storage Persistence**: Your plans are automatically saved and persist across page refreshes
 - **Regenerate Plans**: Generate new plans with a single click while keeping your preferences
@@ -70,7 +70,7 @@ Each generated plan includes:
 
 - **Next.js API Routes** - Server-side API endpoints
 - **Google Gemini AI** (`@google/genai`, `@google/generative-ai`) - AI-powered plan generation
-- **Google Imagen 3.0** - AI image generation for exercises and meals
+- **Freepik Imagen 3 API** - AI image generation for exercises and meals
 - **ElevenLabs API** - Text-to-speech functionality
 
 ### Utilities
@@ -126,6 +126,7 @@ ai-fitness-guide/
 - **Node.js** 18.x or higher
 - **npm** or **yarn** package manager
 - **Google Gemini API Key** - Get from [Google AI Studio](https://makersuite.google.com/app/apikey)
+- **Freepik API Key** - Get from [Freepik API Dashboard](https://www.freepik.com/api/) for image generation
 - **ElevenLabs API Key** (optional) - Get from [ElevenLabs](https://elevenlabs.io/) for text-to-speech feature
 
 ### Installation
@@ -148,6 +149,7 @@ ai-fitness-guide/
    Create a `.env.local` file in the root directory:
    ```env
    GEMINI_API_KEY=your_gemini_api_key_here
+   FREEPIK_API_KEY=your_freepik_api_key_here
    ELEVENLABS_API_KEY=your_elevenlabs_api_key_here
    ```
 
@@ -174,6 +176,7 @@ npm start
 | Variable | Required | Description |
 |----------|----------|-------------|
 | `GEMINI_API_KEY` | ✅ Yes | Google Gemini API key for generating fitness plans |
+| `FREEPIK_API_KEY` | ✅ Yes | Freepik API key for generating exercise and meal images |
 | `ELEVENLABS_API_KEY` | ⚠️ Optional | ElevenLabs API key for text-to-speech feature (required only if using TTS) |
 
 ## 📡 API Endpoints
@@ -319,6 +322,7 @@ This project is open source and available under the [MIT License](LICENSE).
 ## 🙏 Acknowledgments
 
 - **Google Gemini AI** for intelligent plan generation
+- **Freepik** for AI image generation
 - **ElevenLabs** for high-quality text-to-speech
 - **Next.js Team** for the amazing framework
 - **Framer Motion** for beautiful animations
