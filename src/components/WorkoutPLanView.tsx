@@ -72,7 +72,7 @@ export default function WorkoutPlanView({ workoutPlan }: WorkoutPlanViewProps) {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: exIndex * 0.05 }}
-                  className="bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-700 dark:to-gray-750 p-5 rounded-2xl border border-gray-200 dark:border-gray-600 hover:shadow-md transition-all duration-200"
+                  className=" gray-50  dark:bg-black/10 p-5 rounded-2xl border border-gray-200 dark:border-gray-600 hover:shadow-md transition-all duration-200"
                 >
                   <div className="flex items-start justify-between gap-3">
                     <div className="flex items-start gap-3 flex-1">
