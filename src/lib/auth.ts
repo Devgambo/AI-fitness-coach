@@ -1,4 +1,5 @@
 import jwt from "jsonwebtoken";
+import type { SignOptions } from "jsonwebtoken";
 import bcrypt from "bcryptjs";
 
 const JWT_SECRET = process.env.JWT_SECRET;
@@ -8,12 +9,17 @@ if (!JWT_SECRET) {
   throw new Error("Missing JWT_SECRET environment variable");
 }
 
+const SECRET = JWT_SECRET as jwt.Secret;
+const SIGN_OPTIONS: SignOptions = {
+  expiresIn: JWT_EXPIRES_IN as unknown as number,
+};
+
 export function signJwt(payload: Record<string, unknown>) {
-  return jwt.sign(payload, JWT_SECRET, { expiresIn: JWT_EXPIRES_IN });
+  return jwt.sign(payload, SECRET, SIGN_OPTIONS);
 }
 
 export function verifyJwt<T>(token: string) {
-  return jwt.verify(token, JWT_SECRET) as T;
+  return jwt.verify(token, SECRET) as T;
 }
 
 export async function hashPassword(password: string) {
