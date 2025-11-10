@@ -6,6 +6,8 @@ import UserForm from "@/components/UserForm";
 import PlanDisplay from "@/components/PlanDisplay";
 import { FitnessPlan, UserDetails } from "@/types";
 import { toast } from "sonner";
+import { useAuth } from "@/components/AuthProvider";
+import LandingHero from "@/components/LandingHero";
 
 const STORAGE_KEYS = {
   PLAN: "fitness_plan",
@@ -13,6 +15,7 @@ const STORAGE_KEYS = {
 };
 
 export default function Home() {
+  const { user, initializing } = useAuth();
   const [plan, setPlan] = useState<FitnessPlan | null>(null);
   const [loading, setLoading] = useState(false);
   const [userDetails, setUserDetails] = useState<UserDetails | null>(null);
@@ -20,6 +23,21 @@ export default function Home() {
 
   // Load from localStorage on mount
   useEffect(() => {
+    if (!user) {
+      setPlan(null);
+      setUserDetails(null);
+      setIsHydrated(false);
+      try {
+        localStorage.removeItem(STORAGE_KEYS.PLAN);
+        localStorage.removeItem(STORAGE_KEYS.USER_DETAILS);
+      } catch (error) {
+        console.error("Error clearing localStorage:", error);
+      }
+      return;
+    }
+
+    setIsHydrated(false);
+
     try {
       const savedPlan = localStorage.getItem(STORAGE_KEYS.PLAN);
       const savedUserDetails = localStorage.getItem(STORAGE_KEYS.USER_DETAILS);
@@ -38,11 +56,11 @@ export default function Home() {
     } finally {
       setIsHydrated(true);
     }
-  }, []);
+  }, [user]);
 
   // Save to localStorage whenever plan or userDetails change
   useEffect(() => {
-    if (!isHydrated) return;
+    if (!isHydrated || !user) return;
 
     try {
       if (plan) {
@@ -56,7 +74,7 @@ export default function Home() {
   }, [plan, isHydrated]);
 
   useEffect(() => {
-    if (!isHydrated) return;
+    if (!isHydrated || !user) return;
 
     try {
       if (userDetails) {
@@ -70,6 +88,11 @@ export default function Home() {
   }, [userDetails, isHydrated]);
 
   const handleGeneratePlan = async (details: UserDetails) => {
+    if (!user) {
+      toast.error("Please sign in to create your plan");
+      return;
+    }
+
     setLoading(true);
     setUserDetails(details);
     
@@ -120,6 +143,26 @@ export default function Home() {
   };
 
   // Show loading state during hydration to prevent flash
+  if (initializing) {
+    return (
+      <div className="h-[90vh] bg-gradient-to-br from-pink-50/80 via-white/60 to-rose-50/80 dark:from-[#121212] dark:via-[#1A1A1A] dark:to-[#121212] backdrop-blur-sm">
+        <main className="h-full w-full fixed inset-0 flex items-center justify-center">
+          <div className="text-gray-600 dark:text-gray-400">Loading...</div>
+        </main>
+      </div>
+    );
+  }
+
+  if (!user) {
+    return (
+      <div className="h-[90vh] bg-gradient-to-br from-pink-50/80 via-white/60 to-rose-50/80 dark:from-[#121212] dark:via-[#1A1A1A] dark:to-[#121212] backdrop-blur-sm">
+        <main className="h-full w-full fixed inset-0">
+          <LandingHero />
+        </main>
+      </div>
+    );
+  }
+
   if (!isHydrated) {
     return (
       <div className="h-[90vh] bg-gradient-to-br from-pink-50/80 via-white/60 to-rose-50/80 dark:from-[#121212] dark:via-[#1A1A1A] dark:to-[#121212] backdrop-blur-sm">
